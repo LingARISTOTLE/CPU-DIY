@@ -7,7 +7,7 @@ import (
 
 func main() {
 
-	file, err := os.OpenFile("E:\\goTestIo\\bin256.bin", os.O_CREATE|os.O_WRONLY, 0644)
+	file, err := os.OpenFile("./binMirco/bin256.bin", os.O_CREATE|os.O_WRONLY, 0644)
 	if err != nil {
 		fmt.Println(err)
 		return

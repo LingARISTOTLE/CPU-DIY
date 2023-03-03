@@ -38,7 +38,8 @@ var micro = [...]uint16{
 }
 
 func main() {
-	newfile, err := os.Create("E:\\dqcaogao\\micro.bin")
+	//newfile, err := os.Create("E:\\dqcaogao\\micro.bin")
+	newfile, err := os.Create("./binMirco/micro.bin")
 	if err != nil {
 		fmt.Println(err)
 	}
