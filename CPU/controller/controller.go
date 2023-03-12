@@ -2,6 +2,7 @@ package main
 
 import (
 	"demoOne/CPU/pin"
+	"demoOne/assembly"
 	"fmt"
 	"os"
 )
@@ -39,8 +40,8 @@ func setHLT(cpu_file *os.File) {
 func setFETCH(cpu_file *os.File) {
 	for j := 0; j < 0xfff; j++ {
 		for i := 0; i < 16; i++ {
-			if i < len(pin.FETCH) {
-				cpu_file.Write(uint64ToBit(uint64(pin.FETCH[i]), 4))
+			if i < len(assembly.FETCH) {
+				cpu_file.Write(uint64ToBit(uint64(assembly.FETCH[i]), 4))
 			} else {
 				cpu_file.Write(uint64ToBit(uint64(pin.HLT), 4))
 			}

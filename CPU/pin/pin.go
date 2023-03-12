@@ -93,3 +93,22 @@ var PC_INC = PC_CS | PC_WE | PC_EN // PC+1自增信号
 
 // 终止指令
 var HLT uint32 = 1 << 31
+
+//指定标记
+/**
+二地址指令：
+	1xxx [aa] [bb]
+一地址指令：
+	01xx xx [aa]
+零地址指令：
+	00xx xx xx
+*/
+var ADDR2 = 1 << 7  // 二地址指令标记
+var ADDR1 = 1 << 6  // 一地址指令标记
+var ADDR2_SHIFT = 4 //二地址指令后面有4位表示两个地址
+var ADDR1_SHIFT = 2 //一地址指令后面有2位表示一个地址
+
+var AM_INS = 0 // 立即数寻址
+var AM_REG = 1 // 寄存器寻址
+var AM_DIR = 2 // 寄存器直接寻址
+var AM_RAM = 3 // 寄存器间接寻址
