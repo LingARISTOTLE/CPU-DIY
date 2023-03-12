@@ -1,4 +1,4 @@
-package main
+package pin
 
 // 各个寄存器在32位地址线的位置
 var MSR uint32 = 1

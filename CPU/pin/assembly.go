@@ -1,4 +1,4 @@
-package main
+package pin
 
 // 取指令微程序
 var FETCH = []uint32{
