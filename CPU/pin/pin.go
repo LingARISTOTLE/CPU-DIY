@@ -91,8 +91,15 @@ var PC_OUT = PC_CS                 // PC数据输出信号
 var PC_IN = PC_CS | PC_WE          // PC自定义增量信号
 var PC_INC = PC_CS | PC_WE | PC_EN // PC+1自增信号
 
+var CYC uint32 = 1 << 30
+
 // 终止指令
 var HLT uint32 = 1 << 31
+
+/****************************************************************/
+/**
+上面都是管脚电路，是数据。而下面的都是指令，操作地址。
+*/
 
 //指定标记
 /**
@@ -103,10 +110,10 @@ var HLT uint32 = 1 << 31
 零地址指令：
 	00xx xx xx
 */
-var ADDR2 = 1 << 7  // 二地址指令标记
-var ADDR1 = 1 << 6  // 一地址指令标记
-var ADDR2_SHIFT = 4 //二地址指令后面有4位表示两个地址
-var ADDR1_SHIFT = 2 //一地址指令后面有2位表示一个地址
+var ADDR2 uint32 = 1 << 7 // 二地址指令标记
+var ADDR1 uint32 = 1 << 6 // 一地址指令标记
+var ADDR2_SHIFT = 4       //二地址指令后面有4位表示两个地址
+var ADDR1_SHIFT = 2       //一地址指令后面有2位表示一个地址
 
 var AM_INS = 0 // 立即数寻址
 var AM_REG = 1 // 寄存器寻址
